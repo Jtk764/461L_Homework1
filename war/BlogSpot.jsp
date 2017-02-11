@@ -106,15 +106,15 @@ to include your name with greetings you post.</p>
 
    ObjectifyService.register(Greeting.class);
 
-List<Greeting> greetings = ObjectifyService.ofy().load().type(Greeting.class).list();   
+List<Blog> blogs = ObjectifyService.ofy().load().type(Blog.class).list();   
 
 Collections.sort(greetings); 
 
-    if (greetings.isEmpty()) {
+    if (blogs.isEmpty()) {
 
         %>
 
-        <p>Guestbook '${fn:escapeXml(guestbookName)}' has no messages.</p>
+        <p>There are no Blogs.</p>
 
         <%
 
@@ -122,25 +122,19 @@ Collections.sort(greetings);
 
         %>
 
-        <p>Messages in Guestbook '${fn:escapeXml(guestbookName)}'.</p>
+        <p>Blogs: </p>
 
         <%
 
-        for (Greeting greeting : greetings) {
+        for (Blog blog : greetings) {
 
             pageContext.setAttribute("greeting_content",
 
                                      greeting.getContent());
 
-            if (greeting.getUser() == null) {
+     
 
-                %>
-
-                <p>An anonymous person wrote:</p>
-
-                <%
-
-            } else {
+           {
 
                 pageContext.setAttribute("greeting_user",
 
@@ -152,7 +146,7 @@ Collections.sort(greetings);
 
                 <%
 
-            }
+            
 
             %>
 
