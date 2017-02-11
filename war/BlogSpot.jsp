@@ -84,7 +84,7 @@
 
 <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 
-to include your name with greetings you post.</p>
+to include your name with blogs you post.</p>
 
 <%
 
@@ -108,7 +108,7 @@ to include your name with greetings you post.</p>
 
 List<Blog> blogs = ObjectifyService.ofy().load().type(Blog.class).list();   
 
-Collections.sort(greetings); 
+Collections.sort(blogs); 
 
     if (blogs.isEmpty()) {
 
@@ -126,23 +126,23 @@ Collections.sort(greetings);
 
         <%
 
-        for (Blog blog : greetings) {
+        for (Blog blog : blogs) {
 
-            pageContext.setAttribute("greeting_content",
+            pageContext.setAttribute("blog_Title",
 
-                                     greeting.getContent());
+                                     blog.getContent());
 
      
 
            {
 
-                pageContext.setAttribute("greeting_user",
+                pageContext.setAttribute("blog_user",
 
-                                         greeting.getUser());
+                                         blog.getUser());
 
                 %>
 
-                <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
+                <p><b>${fn:escapeXml(blog_user.nickname)}</b> posted:</p>
 
                 <%
 
@@ -150,7 +150,7 @@ Collections.sort(greetings);
 
             %>
 
-            <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
+            <blockquote>${fn:escapeXml(blog_content)}</blockquote>
 
             <%
 

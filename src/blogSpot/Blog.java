@@ -9,6 +9,7 @@ import com.googlecode.objectify.annotation.Id;
 public class Blog implements Comparable<Blog> {
     @Id Long id;
     User user;
+    String Title;
     String content;
     Date date;
     private Blog() {}
