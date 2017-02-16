@@ -134,7 +134,7 @@ List<Blog> blogs = ObjectifyService.ofy().load().type(Blog.class).list();
 
      
 
-           }
+           {
 
                 pageContext.setAttribute("blog_user",
 
