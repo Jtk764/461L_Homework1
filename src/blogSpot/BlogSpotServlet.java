@@ -38,7 +38,7 @@ public class BlogSpotServlet extends HttpServlet {
 		String content = req.getParameter("content");
 		Blog blog = new Blog(user, content);
 		ofy().save().entity(blog).now();
-		resp.sendRedirect("BlogSpot.jsp");
+		resp.sendRedirect("BlogSpot.jsp?");
 
 	}
 
