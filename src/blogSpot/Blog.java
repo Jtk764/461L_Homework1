@@ -1,4 +1,5 @@
-package blogSpot;
+package blogspot;
+
 import java.util.Date;
 import com.google.appengine.api.users.User;
 import com.googlecode.objectify.annotation.Entity;

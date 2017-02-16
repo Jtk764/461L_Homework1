@@ -1,4 +1,5 @@
-package blogSpot;
+package blogspot;
+
 import com.google.appengine.api.datastore.DatastoreService;
 
 import static com.googlecode.objectify.ObjectifyService.ofy;
@@ -22,6 +23,8 @@ import java.io.IOException;
 
 import java.util.Date;
 
+ 
+
 import javax.servlet.http.HttpServlet;
 
 import javax.servlet.http.HttpServletRequest;
@@ -38,8 +41,7 @@ public class BlogSpotServlet extends HttpServlet {
 		String content = req.getParameter("content");
 		Blog blog = new Blog(user, content);
 		ofy().save().entity(blog).now();
-		resp.sendRedirect("BlogSpot.jsp?");
-
+		resp.sendRedirect("/BlogSpot.jsp");
 	}
 
 }

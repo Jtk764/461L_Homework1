@@ -9,7 +9,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
         <servlet-name>BlogSpot</servlet-name>
 
-        <servlet-class>blogSpot.BlogSpotServerlet</servlet-class>
+        <servlet-class>blogspot.BlogSpotServlet</servlet-class>
 
     </servlet>
 

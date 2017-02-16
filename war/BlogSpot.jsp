@@ -104,11 +104,11 @@ to include your name with blogs you post.</p>
 
     // view of the Greetings belonging to the selected Guestbook.
 
-   ObjectifyService.register(Greeting.class);
+   ObjectifyService.register(Blog.class);
 
 List<Blog> blogs = ObjectifyService.ofy().load().type(Blog.class).list();   
 
-Collections.sort(blogs); 
+// Collections.sort(blogs); 
 
     if (blogs.isEmpty()) {
 
@@ -134,7 +134,7 @@ Collections.sort(blogs);
 
      
 
-           {
+           }
 
                 pageContext.setAttribute("blog_user",
 
