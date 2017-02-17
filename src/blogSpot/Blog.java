@@ -15,7 +15,7 @@ public class Blog implements Comparable<Blog> {
     String content;
     Date date;
     private Blog() {}
-    public Blog(User user, String content) {
+    public Blog(User user, String title, String content) {
         this.user = user;
         this.content = content;
         date = new Date();

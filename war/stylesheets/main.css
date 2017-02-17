@@ -1,0 +1,19 @@
+body {
+	font-family: Verdana, Helvetica, sans-serif;
+	background-color: #DEB887;
+}
+
+#container {
+	width: 500px;
+	clear: both;
+}
+
+#container  input {
+	width: 500px;
+	clear: both;
+}
+
+#container textarea {
+	width: 500px;
+	clear: both;
+}
