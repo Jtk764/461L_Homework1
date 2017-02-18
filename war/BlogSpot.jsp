@@ -89,9 +89,36 @@ to include your name with greetings you post.</p>
         }
     }
 
-%>
+ DatastoreService datastore2 = DatastoreServiceFactory.getDatastoreService();
+    Key userKey = KeyFactory.createKey("User", "default");
 
+
+    Query query2 = new Query("User", userKey).addSort("user", Query.SortDirection.DESCENDING);
+    List<Entity> user2 = datastore.prepare(query2).asList(FetchOptions.Builder.withLimit(5));
+    if (user2.contains(userService.getCurrentUser())) {
+     %>
+    
 <a href="/ViewAllPost.jsp">View All Posts</a>
+   <div id = container>
+    <form action="/BlogSpot" method="unsubscribe">
+		<div><input type="submit" value="Unsubscribe" /></div>
+      <input type="hidden" name="default" value="${fn:escapeXml(userName)}"/>
+
+    </form>
+     <%
+    }  else {
+         %>
+    
+<a href="/ViewAllPost.jsp">View All Posts</a>
+   <div id = container>
+    <form action="/BlogSpot" method="subscribe">
+		<div><input type="submit" value="Subscribe" /></div>
+
+    </form>
+     <%
+    }
+    
+%>
 </p>
  
 

@@ -88,4 +88,74 @@ public class BlogSpotServlet extends HttpServlet {
         resp.sendRedirect("/");
 	}
 
+	
+	public void doSubscribe(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		UserService userService = UserServiceFactory.getUserService();
+		User user = userService.getCurrentUser();
+		
+        // We have one entity group per Guestbook with all Greetings residing
+
+        // in the same entity group as the Guestbook to which they belong.
+
+        // This lets us run a transactional ancestor query to retrieve all
+
+        // Greetings for a given Guestbook.  However, the write rate to each
+
+        // Guestbook should be limited to ~1/second.
+
+        Key userkey = KeyFactory.createKey("User", "default");
+        
+        String title = user.toString();
+
+
+        Entity user1 = new Entity("User", userkey);
+
+        user1.setProperty("user", user);
+
+
+ 
+
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+        datastore.put(user1);
+
+ 
+
+        resp.sendRedirect("/");
+	}
+	
+	public void doUnubscribe(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		UserService userService = UserServiceFactory.getUserService();
+		User user = userService.getCurrentUser();
+		
+        // We have one entity group per Guestbook with all Greetings residing
+
+        // in the same entity group as the Guestbook to which they belong.
+
+        // This lets us run a transactional ancestor query to retrieve all
+
+        // Greetings for a given Guestbook.  However, the write rate to each
+
+        // Guestbook should be limited to ~1/second.
+
+        Key userkey = KeyFactory.createKey("User", "default");
+        
+        String title = user.toString();
+
+
+        Entity user1 = new Entity("User", userkey);
+
+        user1.setProperty("user", user);
+
+
+ 
+
+        DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+
+        datastore.delete(user1.getKey());
+
+ 
+
+        resp.sendRedirect("/");
+	}
 }
