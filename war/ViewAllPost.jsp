@@ -20,9 +20,13 @@
 
 <html>
  <head>
-   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+ 	<TITLE>R/IDKWHATIMDOING</TITLE>
+   <link href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" rel="stylesheet"></link>
  </head>
   <body>
+ 
+<h1 style="color:blue;">Reading All The Stuff</h1>
+
 <%
     String guestbookName = "default";
 

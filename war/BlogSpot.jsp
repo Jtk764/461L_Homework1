@@ -20,10 +20,13 @@
 
 <html>
  <head>
-   <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+ 	<TITLE>R/IDKWHATIMDOING</TITLE>
+   <link href="http://thomasf.github.io/solarized-css/solarized-dark.min.css" rel="stylesheet"></link>
  </head>
   <body>
+  <h1 style="color:blue;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1tgBPUezAsM3gvrUSzkKynZegT_w502h2SiiRxg5n2UFYso2cSQ" alt="Smiley face" style="float:right;width:480px;height:300px;">The Terrors of Not Knowing HTML</h1>
 <%
+
     String guestbookName = "default";
 
     pageContext.setAttribute("guestbookName", guestbookName);
